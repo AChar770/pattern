@@ -22,7 +22,14 @@ export function sumToN(n) {
  * @returns `1` if n is 0
  */
 export function factorial(n) {
-  // TODO
+  if (typeof n !== "number") return NaN;
+
+  let product = 0;
+  for (let i = 1; i <= n; i++) {
+    product += i;
+  }
+  return product
+  // TODO #1 - Done
 }
 
 /**

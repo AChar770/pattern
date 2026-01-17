@@ -39,8 +39,17 @@ export function factorial(n) {
  * @returns `[]` if n is 0 or negative
  */
 export function buildNArray(n) {
-  // TODO
+  if (typeof n !== "number") return NaN;
+  if (n <=0) return[] //guard for bad input
+
+  let result =[]; //remember this accu is an array
+  for (let i = 1; i <= n; i++) {
+    return.push(i)
+  }
+
+  return result; //the loop updates the accu and the func return, returns it
 }
+  // TODO #2 - Done
 
 /**
  * @param {string[]} strings

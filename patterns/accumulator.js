@@ -44,7 +44,7 @@ export function buildNArray(n) {
 
   let result =[]; //remember this accu is an array
   for (let i = 1; i <= n; i++) {
-    return.push(i);
+    result.push(i);
   }
 
   return result; //the loop updates the accu and the func return, returns it

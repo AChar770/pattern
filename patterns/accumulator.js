@@ -44,7 +44,7 @@ export function buildNArray(n) {
 
   let result =[]; //remember this accu is an array
   for (let i = 1; i <= n; i++) {
-    return.push(i)
+    return.push(i);
   }
 
   return result; //the loop updates the accu and the func return, returns it
@@ -72,7 +72,16 @@ export function getLongestString(strings) {
  * @returns {number} the number of students present
  */
 export function countPresent(attendance) {
-  // TODO
+  let count = 0;
+
+  for (let i = 0; i < attendance.length; i++){
+    if (attendance[i] === true) {
+      count++;
+    }
+  }
+
+  return count;
+  // TODO #4
 }
 
 /**
@@ -86,5 +95,18 @@ export function countPresent(attendance) {
  * @returns `null` if `dna` is not a string
  */
 export function complementDNA(dna) {
-  // TODO
+  if (typeof dna!== "string") return null;
+
+  let complement = "";
+
+  for (let i = 0; i < dna.length; i++){
+  if (dna[i] === "A") complement += "T";
+  else if (dna[i] === "T") complement += "A";
+  else if (dna[i] === "C") complement += "G";
+  else if (dna[i] === "G") complement += "C";
 }
+
+return complement;
+}
+  // TODO #5
+

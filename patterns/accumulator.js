@@ -56,8 +56,16 @@ export function buildNArray(n) {
  * @returns {string} the longest string in `strings`
  */
 export function getLongestString(strings) {
-  // TODO
+  let longest = "";
+  for (let i = 0; i < strings.length; i++) {
+    if (string[i].length > longest.length) {
+    longest = strings[i];
+  }
 }
+ return longest;
+}
+  // TODO #3 - Done
+
 
 /**
  * @param {boolean[]} attendance - `true` means a student is present, `false` means a student is absent

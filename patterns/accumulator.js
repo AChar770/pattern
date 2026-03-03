@@ -23,13 +23,13 @@ export function sumToN(n) {
  */
 export function factorial(n) {
   if (typeof n !== "number") return NaN;
+  if (n < 0) return undefined;
 
-  let product = 0;
+  let product = 1;
   for (let i = 1; i <= n; i++) {
-    product += i;
+    product *= i;
   }
-  return product
-  // TODO #1 - Done
+  return product;
 }
 
 /**
@@ -39,7 +39,7 @@ export function factorial(n) {
  * @returns `[]` if n is 0 or negative
  */
 export function buildNArray(n) {
-  if (typeof n !== "number") return NaN;
+  if (typeof n !== "number") return null;
   if (n <=0) return[] //guard for bad input
 
   let result =[]; //remember this accu is an array
@@ -49,7 +49,6 @@ export function buildNArray(n) {
 
   return result; //the loop updates the accu and the func return, returns it
 }
-  // TODO #2 - Done
 
 /**
  * @param {string[]} strings
@@ -58,13 +57,12 @@ export function buildNArray(n) {
 export function getLongestString(strings) {
   let longest = "";
   for (let i = 0; i < strings.length; i++) {
-    if (string[i].length > longest.length) {
-    longest = strings[i];
+    if (strings[i].length > longest.length) {
+      longest = strings[i];
+    }
   }
+  return longest;
 }
- return longest;
-}
-  // TODO #3 - Done
 
 
 /**
@@ -81,7 +79,6 @@ export function countPresent(attendance) {
   }
 
   return count;
-  // TODO #4
 }
 
 /**
@@ -95,18 +92,28 @@ export function countPresent(attendance) {
  * @returns `null` if `dna` is not a string
  */
 export function complementDNA(dna) {
-  if (typeof dna!== "string") return null;
+  if (typeof dna !== "string") return null;
 
-  let complement = "";
+  const complement = new Array(dna.length);
 
-  for (let i = 0; i < dna.length; i++){
-  if (dna[i] === "A") complement += "T";
-  else if (dna[i] === "T") complement += "A";
-  else if (dna[i] === "C") complement += "G";
-  else if (dna[i] === "G") complement += "C";
+  for (let i = 0; i < dna.length; i++) {
+    switch (dna.charCodeAt(i)) {
+      case 65: // A
+        complement[i] = "T";
+        break;
+      case 84: // T
+        complement[i] = "A";
+        break;
+      case 67: // C
+        complement[i] = "G";
+        break;
+      case 71: // G
+        complement[i] = "C";
+        break;
+      default:
+        complement[i] = "";
+    }
+  }
+
+  return complement.join("");
 }
-
-return complement;
-}
-  // TODO #5
-
